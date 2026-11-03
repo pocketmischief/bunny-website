@@ -137,8 +137,8 @@ export const BUNNY_STORIES = [
     ...defaults,
     slug: 'bunny-games-questions-this-or-that',
     title: 'Bunny Games and Questionnaires: From Question Rounds to This or That',
-    metaDescription: 'Explore Bunny’s couples question games, learn how answer rounds work, and try this-or-that conversation ideas for your next long-distance date.',
-    excerpt: 'Pick a question pack, compare your answers and keep the conversation going with playful this-or-that prompts for your next call.',
+    metaDescription: 'Explore Bunny’s 10-question couples games, from Travel Adventures and Lovey Dovey to Deep Talks. Compare answers and try this-or-that ideas for your next call.',
+    excerpt: 'Ten questions, a topic you both enjoy, and a reason to keep talking. Explore packs from Foodie Fun to Deep Talks, plus this-or-that ideas for your next call.',
     category: 'Games & questions',
     tags: ['Games & questions', 'Date ideas'],
     readingTime: '4 min read',
@@ -148,12 +148,29 @@ export const BUNNY_STORIES = [
     related: ['long-distance-relationship-games', 'questions-to-ask-long-distance-partner', 'bunny-whiteboard-for-couples'],
     Content: () => (
       <>
-        <p className="lede">Sometimes the best way to start talking is to play something small. Bunny’s question rounds give you a topic, a choice to make and a reason to ask, “Wait, why did you pick me?”</p>
+        <p className="lede">Sometimes the best way to start talking is to play something small. Bunny’s 10-question games give you and your boyfriend or girlfriend a topic, a choice to make and a reason to ask, “Wait, why did you pick me?”</p>
         <h2>What you can play in Bunny</h2>
         <p>Bunny’s documented question game is <Link to="/couples-question-games">Who’s More Likely To?</Link>. You choose a pack and answer each prompt with Me or My Partner. After both partners finish, the results show your choices side by side and how often you agreed.</p>
         <p>These questionnaire-style rounds are about discovering each other’s perspective. A matching answer can be funny; a different answer can be an even better opening for a story. The result gives you something to discuss, rather than a measure of how well your relationship is doing.</p>
         <h2>Choose your first question pack</h2>
         <p>Start in the Free collection with Travel Adventures, Foodie Fun or Random Fun. Choose the theme that matches your mood: a conversation about trips, an excuse to talk about food or a mix of topics. Additional packs, including Lovey Dovey, require Pro.</p>
+        <h3>Explore the question-game topics</h3>
+        <p>Each of these games has 10 questions. Pick a familiar theme for an easy start, or try a different topic when you want to move beyond your usual conversation.</p>
+        <ul>
+          <li>Travel Adventures</li>
+          <li>Foodie Fun</li>
+          <li>Random Fun</li>
+          <li>Lovey Dovey</li>
+          <li>Dating Spicy</li>
+          <li>Daily Life</li>
+          <li>Social Butterfly</li>
+          <li>Tech and Screen Time</li>
+          <li>Money and Shopping</li>
+          <li>Deep Talks</li>
+          <li>Future us</li>
+          <li>Hot Takes</li>
+        </ul>
+        <p>You could start with Foodie Fun on a relaxed evening, choose Travel Adventures before planning a visit, or save Deep Talks and Future us for a call when you both have more time. Check the pack’s access label in the app before starting.</p>
         <p>You can also keep the game short by agreeing to talk about just one surprising result afterward. There’s no need to turn a light evening activity into a long discussion unless you both want to.</p>
         <h2>How a round works on two phones</h2>
         <ol>

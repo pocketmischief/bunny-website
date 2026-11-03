@@ -57,7 +57,8 @@ export default function CouplesQuestionGames() {
             <li><strong>Foodie Fun:</strong> compare your food habits and tastes.</li>
             <li><strong>Random Fun:</strong> choose a mixed topic round.</li>
           </ul>
-          <p>These three packs are free. Additional packs, including Lovey Dovey, require Bunny Pro. The library shows each pack’s access label and question count before you start.</p>
+          <p>These three packs are free. Each game has 10 questions. Additional packs include Lovey Dovey, Dating Spicy, Daily Life, Social Butterfly, Tech and Screen Time, Money and Shopping, Deep Talks, Future us and Hot Takes. Additional question packs require Bunny Pro. The library shows each pack’s access label and question count before you start.</p>
+          <p>Read our <Link to="/blog/bunny-games-questions-this-or-that">guide to Bunny’s question games</Link> to explore the topics and find ideas for your next game night.</p>
 
           <h2>How to play your first round</h2>
           <ol style={{ paddingLeft: 24, color: 'var(--text-secondary)' }}>

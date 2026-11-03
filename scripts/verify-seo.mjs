@@ -121,6 +121,11 @@ for (const location of blogLocations) {
   }
 }
 console.log(`Blog checks passed: ${blogLocations.length} discoverable articles with unique metadata, canonical URLs, Article schema and working internal links.`);
+const gamesArticle = readFileSync(resolve(dist, 'blog/bunny-games-questions-this-or-that/index.html'), 'utf8');
+for (const pack of ['Travel Adventures', 'Foodie Fun', 'Random Fun', 'Lovey Dovey', 'Dating Spicy', 'Daily Life', 'Social Butterfly', 'Tech and Screen Time', 'Money and Shopping', 'Deep Talks', 'Future us', 'Hot Takes']) {
+  assert(gamesArticle.includes(`<li>${pack}</li>`), `Confirmed question pack missing from games article: ${pack}`);
+}
+assert(gamesArticle.includes('Each of these games has 10 questions.'), 'Preserve the confirmed question count');
 for (const slug of features) {
   const url = `https://www.bunnycouples.com/${slug}/`;
   assert.equal(locations.filter((location) => location === url).length, 1, `Sitemap entry: ${slug}`);
