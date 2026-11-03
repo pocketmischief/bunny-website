@@ -1298,6 +1298,9 @@ a {
 .article-download { padding: 28px; border-radius: 20px; background: #eaf0e1; margin-top: 40px; }
 .article-download h2 { margin-top: 0; }
 .article-download > a:last-child { display: block; font-size: 14px; margin-top: 14px; }
+.blog-post .article-app-link { display: inline-flex; align-items: center; gap: 8px; background: #3a4735; color: #fff; padding: 12px 20px; border-radius: 16px; text-decoration: none; font-size: 14px; }
+.blog-post .article-app-link:hover { color: #fff; background: #526244; }
+.blog-post .article-app-link:focus-visible { outline: 3px solid #56643b; outline-offset: 4px; }
 .article-related { margin: 56px auto 0; }
 .article-related > h2 { margin-bottom: 24px; }
 .blog-post .cmp-table caption { text-align: left; margin-bottom: 12px; font-weight: 600; }

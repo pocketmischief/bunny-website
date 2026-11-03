@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Seo from './seo/Seo';
 import { breadcrumbSchema, articleSchema, faqSchema } from './seo/schema';
@@ -99,7 +99,7 @@ export default function BlogPost({ slug }) {
             <aside className="article-download">
               <h2>Make a little room for the two of you.</h2>
               <p>Start with a shared bunny, text love letters and three free question packs. Available on iPhone and iPad.</p>
-              <a href={appStoreLink('blog', post.slug)} className="app-store-badge" aria-label="Download Bunny on the App Store" />
+              <a href={appStoreLink('blog', post.slug)} className="article-app-link">Download Bunny on the App Store <ArrowUpRight size={18} aria-hidden="true" /></a>
               <Link to="/pricing">Explore free and Pro features</Link>
             </aside>
           )}
