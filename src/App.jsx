@@ -12,6 +12,8 @@ import {
 } from './seo/schema';
 import { HOME_FAQ } from './data/faq';
 import './index.css';
+import BlogCard from './BlogCard';
+import { POSTS } from './data/blog';
 
 // Assets (WebP; see scripts/optimize-images.mjs)
 import logoImg from './assets/bunny-logo.webp';
@@ -93,6 +95,7 @@ export function Home() {
             <Link to="/pricing">Pricing</Link>
             <Link to="/about">Our story</Link>
             <Link to="/compare">Compare</Link>
+            <Link to="/blog">Blog</Link>
             <Link to="/contact">Contact</Link>
             <a href={appStoreLink('homepage', 'nav')} className="app-store-badge-small" aria-label="Download Bunny on the App Store"></a>
           </div>
@@ -234,6 +237,16 @@ export function Home() {
             Bunny began as a present Prafull made for his girlfriend.{' '}
             <Link to="/about">Meet the maker and read the story</Link>.
           </p>
+        </div>
+      </section>
+
+      <section className="home-journal" aria-labelledby="home-journal-heading">
+        <div className="container">
+          <div className="home-journal-heading">
+            <div><p className="journal-eyebrow">FROM THE BUNNY BLOG</p><h2 id="home-journal-heading">Small ideas. More time for us.</h2><p>Inspiration for staying close, even from far away.</p></div>
+            <Link to="/blog" className="journal-all-link">Explore all stories <span aria-hidden="true">↗</span></Link>
+          </div>
+          <div className="stories-grid">{POSTS.slice(0, 3).map((post) => <BlogCard key={post.slug} post={post} headingLevel="h3" />)}</div>
         </div>
       </section>
 

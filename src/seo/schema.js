@@ -98,7 +98,9 @@ export function articleSchema({ title, description, path, datePublished, dateMod
     image: image ? abs(image) : abs(SITE.ogImage),
     datePublished,
     dateModified: dateModified || datePublished,
-    author: { '@type': 'Person', name: author || SITE.founder.name, url: SITE.founder.url },
+    author: author === 'The Bunny team'
+      ? { '@type': 'Organization', name: 'The Bunny team', url: `${SITE.url}/about/` }
+      : { '@type': 'Person', name: author || SITE.founder.name, url: SITE.founder.url },
     publisher: {
       '@type': 'Organization',
       name: SITE.name,

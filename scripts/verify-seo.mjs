@@ -92,6 +92,35 @@ const titles = new Set();
 const descriptions = new Set();
 const home = readFileSync(resolve(dist, 'index.html'), 'utf8');
 const blog = readFileSync(resolve(dist, 'blog/index.html'), 'utf8');
+// Every published article must be discoverable without JavaScript and carry
+// its own content, metadata and working links after static generation.
+const blogLocations = locations.filter((location) => new URL(location).pathname.startsWith('/blog/'))
+  .filter((location) => new URL(location).pathname !== '/blog/');
+const blogTitles = new Set();
+const blogDescriptions = new Set();
+for (const location of blogLocations) {
+  const route = new URL(location).pathname;
+  const html = readFileSync(resolve(dist, `.${route}`, 'index.html'), 'utf8');
+  assert(blog.includes(`href="${route.slice(0, -1)}"`), `Blog discovery link: ${route}`);
+  assert.equal([...html.matchAll(/<h1\b/g)].length, 1, `Article H1: ${route}`);
+  assert(html.includes(`rel="canonical" href="${location}"`), `Article canonical: ${route}`);
+  const title = html.match(/<title[^>]*>([^<]+)<\/title>/)?.[1];
+  const description = html.match(/<meta\b[^>]*name="description"[^>]*content="([^"]+)"/)?.[1];
+  assert(title && !blogTitles.has(title), `Unique article title: ${route}`);
+  assert(description && !blogDescriptions.has(description), `Unique article description: ${route}`);
+  blogTitles.add(title);
+  blogDescriptions.add(description);
+  const schemas = [...html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)]
+    .map((match) => JSON.parse(match[1]));
+  const article = schemas.find((schema) => schema['@type'] === 'Article');
+  assert.equal(article?.mainEntityOfPage?.['@id'], location, `Article structured data URL: ${route}`);
+  assert(article.datePublished && article.author?.name, `Article date and author: ${route}`);
+  assert(html.includes('href="/blog"'), `Article return link: ${route}`);
+  for (const [, href] of html.matchAll(/<a\b[^>]*href="(\/[^"#?]*)"/g)) {
+    assert(readFileSync(resolve(dist, `.${href}`, 'index.html'), 'utf8').length > 0, `Article internal link ${href} from ${route}`);
+  }
+}
+console.log(`Blog checks passed: ${blogLocations.length} discoverable articles with unique metadata, canonical URLs, Article schema and working internal links.`);
 for (const slug of features) {
   const url = `https://www.bunnycouples.com/${slug}/`;
   assert.equal(locations.filter((location) => location === url).length, 1, `Sitemap entry: ${slug}`);

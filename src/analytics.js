@@ -10,6 +10,10 @@ const PUBLIC_PATHS = new Set([
   '/blog/tamagotchi-for-couples',
   '/blog/couples-apps-without-required-subscription',
   '/blog/shared-drawing-apps-for-couples', '/blog/virtual-pet-names-for-couples',
+  '/blog/bunny-app-for-long-distance-couples', '/blog/bunny-whiteboard-for-couples',
+  '/blog/raising-a-virtual-pet-together', '/blog/bunny-games-questions-this-or-that',
+  '/blog/bunny-vs-other-couples-apps', '/blog/bunny-vs-paired', '/blog/bunny-vs-lovelee',
+  '/blog/bunny-vs-widgetable', '/blog/bunny-vs-locket',
 ]);
 const HOSTS = new Set(['bunnycouples.com', 'www.bunnycouples.com']);
 const ORIGIN = 'https://www.bunnycouples.com';
@@ -27,7 +31,11 @@ const PLACEMENTS = {
   'love-notes': ['hero', 'footer'],
   'shared-plant': ['hero', 'footer'], 'question-games': ['hero', 'footer'],
   pricing: ['hero', 'footer'],
-  blog: ['best-apps-roundup', 'ldr-games', 'ldr-questions', 'tamagotchi-for-couples', 'couples-apps-without-required-subscription', 'shared-drawing-apps-for-couples', 'virtual-pet-names-for-couples'],
+  blog: ['best-apps-roundup', 'ldr-games', 'ldr-questions', 'tamagotchi-for-couples', 'couples-apps-without-required-subscription', 'shared-drawing-apps-for-couples', 'virtual-pet-names-for-couples',
+    'bunny-app-for-long-distance-couples', 'bunny-whiteboard-for-couples',
+    'raising-a-virtual-pet-together', 'bunny-games-questions-this-or-that',
+    'bunny-vs-other-couples-apps', 'bunny-vs-paired', 'bunny-vs-lovelee',
+    'bunny-vs-widgetable', 'bunny-vs-locket'],
   compare: ['bunny-vs-paired', 'bunny-vs-lovelee', 'bunny-vs-widgetable', 'apps-like-locket-for-couples'],
 };
 

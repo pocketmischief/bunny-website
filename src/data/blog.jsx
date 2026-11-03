@@ -5,11 +5,16 @@ import { SUBSCRIPTION_GUIDE } from './couples-apps-without-required-subscription
 import { SHARED_DRAWING_GUIDE } from './shared-drawing-apps-for-couples';
 import { SHARED_ACTIVITIES_GUIDE } from './shared-activities-in-bunny';
 import { VIRTUAL_PET_NAMES_GUIDE } from './virtual-pet-names-for-couples';
+import { BUNNY_STORIES } from './bunny-stories';
+import { COMPARISON_OVERVIEW, comparisonStories } from './bunny-comparison-stories';
 
 // Blog posts. Each post is data + a JSX `Content` component so it can use
 // proper heading hierarchy, lists, internal links, and CTAs.
 
 export const POSTS = [
+  ...BUNNY_STORIES,
+  COMPARISON_OVERVIEW,
+  ...comparisonStories,
   VIRTUAL_PET_NAMES_GUIDE,
   SHARED_DRAWING_GUIDE,
   SUBSCRIPTION_GUIDE,
