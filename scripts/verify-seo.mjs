@@ -77,7 +77,18 @@ const roundup = readFileSync(resolve(dist, 'blog/best-apps-for-long-distance-cou
 assert.match(roundup.replaceAll('<!-- -->', ''), /Updated\s+October 23, 2026/, 'Visible roundup update date must match the date-only metadata');
 
 const vercel = JSON.parse(readFileSync(resolve(root, 'vercel.json'), 'utf8'));
-assert.equal(vercel.cleanUrls, true);
+// Search Console needs the literal verification filename. The marketing pages
+// already have nested index.html output and do not need .html redirects.
+assert.equal(vercel.cleanUrls, false, 'Preserve the Google verification .html URL');
+assert.equal(vercel.buildCommand, 'npm run build', 'Vercel must run the full static site build');
+assert.equal(vercel.outputDirectory, 'dist', 'Vercel must publish the generated static site');
+const verificationFile = 'google9867126eb76a4aff.html';
+const expectedVerification = `google-site-verification: ${verificationFile}`;
+const sourceVerification = readFileSync(resolve(root, 'public', verificationFile));
+const builtVerification = readFileSync(resolve(dist, verificationFile));
+assert.equal(sourceVerification.toString('utf8').trim(), expectedVerification, 'Correct Google verification token');
+assert.deepEqual(builtVerification, sourceVerification, 'Preserve Google verification bytes in production output');
+assert(vercel.rewrites?.some((rewrite) => rewrite.source === `/${verificationFile.slice(0, -5)}` && rewrite.destination === `/${verificationFile}`), 'Keep previously redirected verification URLs working');
 assert(!vercel.rewrites?.some((rewrite) => rewrite.destination === '/index.html'), 'Do not rewrite missing URLs to the homepage');
 const sitemap = readFileSync(resolve(dist, 'sitemap.xml'), 'utf8');
 const locations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
