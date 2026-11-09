@@ -27,7 +27,7 @@ function PrivacyPolicy() {
                     className="legal-content glass-panel"
                 >
                     <h1>Privacy Policy</h1>
-                    <p className="last-updated">Last updated: October 16, 2026</p>
+                    <p className="last-updated">Last updated: November 9, 2026</p>
 
                     <p>This policy explains how the Bunny iPhone app and bunnycouples.com handle your information.</p>
 
@@ -38,12 +38,17 @@ function PrivacyPolicy() {
                     <ul>
                         <li>Account information, such as your email address, display name and user ID. Supabase handles email/password authentication or the sign-in information provided through Sign in with Apple.</li>
                         <li>Partner pairing information, invite codes, relationship dates and shared progress.</li>
-                        <li>Content you create, including love letters, drawings and drawing image copies, question-game answers, affections and gift messages.</li>
+                        <li>Content you create or choose to share, including love letters, drawings and drawing image copies, whiteboard background photos, question-game answers, affections and gift messages.</li>
                         <li>Feature activity needed to save your experience, such as check-ins, hearts, game progress, and shared pet and plant care.</li>
                         <li>Your notification device token and platform, used to deliver push notifications.</li>
                         <li>Purchase and subscription information, as described below, and information you send when contacting support.</li>
                     </ul>
-                    <p>A photo you choose as your whiteboard wallpaper is stored locally on your device. The app also keeps local settings and drawing snapshots for its Home Screen widget. The drawing itself is synced and drawing image copies are uploaded to Supabase.</p>
+                    <p>Whiteboard drawings and shared background photos are uploaded to Supabase so your partner can see them. The app also keeps local settings, cached content and drawing snapshots for its Home Screen widget.</p>
+
+                    <h3>App Analytics and Diagnostics</h3>
+                    <p>We use PostHog's US Cloud service to understand how people use Bunny and identify technical problems. App events include feature actions, onboarding and pairing progress, paywall views and exits, purchase-plan loading, checkout attempts and outcomes, and Restore attempts. Purchase diagnostics include operation identifiers, timing, the stage reached, and fixed error codes from the app, purchase services or server.</p>
+                    <p>App events are linked to your Bunny user ID and, when paired, your relationship ID. They may also include a randomly generated analytics identifier and device or app information. These identifiers are pseudonymous, not anonymous. We do not send your name, email, love-letter text, question answers, photos, drawings, receipts or free-form error messages in these analytics events. Session recordings and automatic screen and interaction capture are disabled.</p>
+                    <p>We use this data for product analytics, reliability and support, not to track you across other companies' apps or websites for advertising. App events disable IP-based geolocation. Service providers still receive network request information when processing requests.</p>
 
                     <h3>Website Analytics</h3>
                     <p>We use PostHog on Bunny's public marketing pages to measure page views and clicks on App Store links. Event information includes the public page visited, the first page visited in the browser session, the referring website's domain, selected campaign labels, and the placement of an App Store link when clicked. We remove URL query strings and fragments; only campaign values from a fixed allowed set are recorded separately.</p>
@@ -62,12 +67,13 @@ function PrivacyPolicy() {
                         <li>Save and sync shared content, activities and relationship progress</li>
                         <li>Deliver notifications and manage purchased access</li>
                         <li>Operate the service, investigate errors and respond to support requests</li>
+                        <li>Understand app feature usage and identify where purchase loading, checkout or Restore encounters a technical problem</li>
                         <li>Understand which website pages and referral sources lead visitors to App Store links</li>
                     </ul>
 
                     <h3>Data Sharing</h3>
                     <p>Pairing makes shared content and relationship activity available to your partner. Your partner can also see your display name and account email in the app.</p>
-                    <p>Service providers process information to run Bunny: Supabase handles accounts and shared data, RevenueCat handles purchase information, Apple handles sign-in, purchases and push delivery, and PostHog handles the website measurement described above. Information you send to support is available to the people handling your request.</p>
+                    <p>Service providers process information to run Bunny: Supabase handles accounts and shared data, RevenueCat handles purchase information, Apple handles sign-in, purchases and push delivery, and PostHog handles the app analytics, diagnostics and website measurement described above. Information you send to support is available to the people handling your request.</p>
                     <p>Push notifications may include a sender name and message content or a preview. These pass through Apple's push notification service and may appear on the recipient's Lock Screen, depending on their device settings.</p>
 
                     <h3>Data Security</h3>
@@ -75,7 +81,7 @@ function PrivacyPolicy() {
                     <ul>
                         <li>Supabase authentication for account sign-in</li>
                         <li>Server-side authorization for account and relationship features</li>
-                        <li>HTTPS connections to Supabase, RevenueCat and Apple services</li>
+                        <li>HTTPS connections to Supabase, RevenueCat, PostHog and Apple services</li>
                     </ul>
                     <p>Bunny does not provide end-to-end encryption. Its servers and service providers process shared content to store it, sync it and deliver notifications.</p>
 
